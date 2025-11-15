@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    container_name: feedback-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    networks:
+      - feedback-network
+
+  frontend:
+    build: ./frontend
+    container_name: feedback-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - feedback-network
+
+networks:
+  feedback-network:
+    driver: bridge
