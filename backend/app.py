@@ -43,7 +43,7 @@ def add_feedback():
     conn.close()
 
     logging.info(f"New feedback added: {name} - {message}")
-    return jsonify({"status": "success", "message": "Feedback added successfully"}), 201
+    return jsonify({"status": "success", "message": "Feedback add successful"}), 201
 
 
 @app.route('/feedback', methods=['GET'])
