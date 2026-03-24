@@ -34,7 +34,7 @@ def add_feedback():
     message = data.get("message")
 
     if not name or not message:
-        return jsonify({"error": "Name and message are required"}), 400
+        return jsonify({"error": "Names and messages are required"}), 400
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
